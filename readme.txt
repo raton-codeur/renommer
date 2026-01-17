@@ -1,5 +1,5 @@
-mettre les fichiers à renommer dans le dossier a
+cloner le repo dans le dossier qui contient uniquement les fichiers à renommer
 
-lancer avec make test
+le script utilise le dossier parent donc il faut l'utiliser comme ça :
 
-supprimer le contenu de "a" avec make clean
+cd renommer; make test; make clean

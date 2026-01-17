@@ -1,10 +1,9 @@
-echo "contenu du dossier sans 'a.sh' 'makefile' et 'readme.txt' :"
+cd ..
+
+echo "fichiers trouvés :"
 for i in *
 do
-  if [ "$i" = "a.sh" ] || [ "$i" = "makefile" ] || [ "$i" = "readme.txt" ]
-	then
-    continue
-  fi
+  [ -f "$i" ] || continue
   echo "<$i>"
 done
 
@@ -17,9 +16,7 @@ n=$n_start
 echo "aperçu :"
 for i in *
 do
-  if [ "$i" = "a.sh" ] || [ "$i" = "makefile" ] || [ "$i" = "readme.txt" ]; then
-		continue
-	fi
+  [ -f "$i" ] || continue
 	echo "<$i>" "->" "<$n.$ext>"
 	((n++))
 done
@@ -30,9 +27,7 @@ read tmp
 n=$n_start
 for i in *
 do
-  if [ "$i" = "a.sh" ] || [ "$i" = "makefile" ] || [ "$i" = "readme.txt" ]; then
-    continue
-  fi
+  [ -f "$i" ] || continue
 	mv -- "$i" "$n.$ext"
 	((n++))
 done
