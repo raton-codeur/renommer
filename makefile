@@ -2,4 +2,4 @@ test :
 	@ bash a.sh
 
 clean :
-	rm a/*
+	rm -rf a.sh makefile readme.txt .git
