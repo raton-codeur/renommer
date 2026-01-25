@@ -9,15 +9,19 @@ done
 
 echo -n "indice de début : "
 read n_start
-echo -n "extension (ex: mkv) : "
-read ext
-
 n=$n_start
+
 echo "aperçu :"
 for i in *
 do
   [ -f "$i" ] || continue
-	echo "<$i>" "->" "<$n.$ext>"
+	ext="${i:e}"
+	if [[ -n "$ext" ]]
+	then
+		echo "<$i>" "->" "<$n.$ext>"
+	else
+		echo "<$i>" "->" "<$n>"
+	fi
 	((n++))
 done
 

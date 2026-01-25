@@ -1,2 +1,2 @@
 test :
-	@ bash a.sh
+	@ zsh a.sh
